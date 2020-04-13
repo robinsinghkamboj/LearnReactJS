@@ -11,3 +11,7 @@
 
 ###### In payment section, you have to select United State in Country column because currency is USD.
 
+### Topics:
+###### 1.) Redux Form
+###### 2.) Protected Routes
+###### 3.) Stripe API for payment
