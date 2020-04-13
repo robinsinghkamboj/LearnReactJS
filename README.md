@@ -1,8 +1,8 @@
 # LearnReactJS
 
 ### cd backend (Terminal 1)
-npm install 
-npm start
+1.) npm install 
+2.) npm start
 
 ### cd frontend(Terminal 2)
 npm install 
