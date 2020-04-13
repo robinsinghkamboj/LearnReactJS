@@ -9,5 +9,5 @@
 ###### 2.) npm start
 
 
-##### In payment section, you have to select United State in Country column because currency is ###### USD.
+##### In payment section, you have to select United State in Country column because currency is `###### USD`.
 
