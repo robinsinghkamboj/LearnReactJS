@@ -1,3 +1,7 @@
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
+
 export function PushToURL(props, url) {
   return props.history.push(url);
 }
@@ -17,4 +21,8 @@ export function removeLocalStorageItem(key) {
 
 export function navigateTo(props, url) {
   return props.history.push(url);
+}
+
+export function toastMsg(msg, type) {
+  return toast(msg, { type: type });
 }

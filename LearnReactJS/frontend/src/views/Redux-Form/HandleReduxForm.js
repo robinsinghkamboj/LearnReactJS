@@ -1,3 +1,5 @@
+// CRUD operations are implemented with LocalStorage
+
 import React from "react";
 import ReduxForm from "./ReduxForm";
 import * as utility from "../../utility";
@@ -154,6 +156,10 @@ class HandleReduxForm extends React.Component {
     utility.navigateTo(this.props, "/payment");
   };
 
+  CRUDWithMySQL = () => {
+    utility.navigateTo(this.props, "/crud-with-mysql");
+  };
+
   logout = async () => {
     await auth.logout(async () => {
       await utility.removeLocalStorageItem("loginData");
@@ -169,6 +175,14 @@ class HandleReduxForm extends React.Component {
             <div className="card-header-btn">
               <button
                 className="btn btn-primary shadow-none"
+                type="button"
+                onClick={this.CRUDWithMySQL}
+              >
+                CRUD With MySQL
+              </button>
+
+              <button
+                className="btn btn-primary shadow-none ml-4"
                 type="button"
                 onClick={this.payment}
               >

@@ -1,9 +1,7 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
-import { toast } from "react-toastify";
+import * as utility from "../../utility";
 import axios from "axios";
-import "react-toastify/dist/ReactToastify.css";
-toast.configure();
 
 class StripePayment extends React.Component {
   constructor(props) {
@@ -35,9 +33,9 @@ class StripePayment extends React.Component {
     const { status } = response.data;
 
     if (status === "success") {
-      toast("Payment Done Successfully.", { type: "success" });
+      utility.toastMsg("Payment Done Successfully.", "success");
     } else {
-      toast("Something Went Wrong! Please Try Again.", { type: "error" });
+      utility.toastMsg("Something Went Wrong! Please Try Again.", "error");
     }
 
     await this.setState({ name: "", amount: "" });
