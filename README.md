@@ -12,6 +12,7 @@
 ###### In payment section, you have to select United State in Country column because currency is USD.
 
 ### Topics:
-###### 1.) Redux Form
+###### 1.) Redux Form with local-storage
 ###### 2.) Protected Routes
 ###### 3.) Stripe API for payment
+###### 4.) Redux Form with MySQL(CRUD) +you have to create a database: check in >> backend >> settings >> db.json
