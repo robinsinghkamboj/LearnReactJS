@@ -26,3 +26,14 @@ export function navigateTo(props, url) {
 export function toastMsg(msg, type) {
   return toast(msg, { type: type });
 }
+
+export function processStatus(response) {
+  let { status } = response;
+  if (status == 200) {
+    return response["data"]["data"];
+  } else {
+    return response["data"]["message"] != undefined
+      ? response["data"]["message"]
+      : response["data"]["error"];
+  }
+}

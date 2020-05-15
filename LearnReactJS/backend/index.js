@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { v4: uuidv4 } = require("uuid");
 const stripe = require("stripe")(process.env.Secret_Key); //require('stripe')("ENTER_STRIPE_SECRET_KEY").
+const route = require("./routes/router");
 const port = 4000;
 const app = express();
 
@@ -22,9 +23,8 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", async (req, res, next) => {
-  res.send({
-    version: "v1.0.1"
-  });
+  let version = "v1.0.1";
+  res.send({ version });
   res.end();
 });
 
@@ -151,6 +151,14 @@ app.post("/charge", async (req, res, next) => {
   res.json({ error, status });
 });
 
+app.use("/", route);
+
+app.use("*", function(req, res, next) {
+  var message = "API Not Found!";
+  res.send({ message });
+  res.end();
+});
+
 app.listen(port, () => {
-  console.log(`Server is running on ${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

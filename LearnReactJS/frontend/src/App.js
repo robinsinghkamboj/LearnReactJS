@@ -32,11 +32,11 @@ const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      auth.isAuthenticated() ? (
+      // auth.isAuthenticated() ? (
         <DefaultLayout {...props} />
-      ) : (
-        <Redirect from="/" to="/login" />
-      )
+      // ) : (
+      //   <Redirect from="/" to="/login" />
+      // )
     }
   />
 );

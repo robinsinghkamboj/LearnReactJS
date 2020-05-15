@@ -1,6 +1,7 @@
 import HandleReduxForm from "./views/Redux-Form/HandleReduxForm";
 import StripePayment from "./views/StripePayment/StripePayment";
 import CRUDWithMySQL from "./views/CRUDWithMySQL/CRUDWithMySQL";
+import TwilioChat from "./views/TwilioChat/TwilioChat";
 
 const routes = [
   { path: "/", exact: true, name: "Home" },
@@ -20,6 +21,12 @@ const routes = [
     path: "/payment",
     name: "Payment",
     component: StripePayment,
+    exact: true
+  },
+  {
+    path: "/twilio-chat",
+    name: "Twilio Chat",
+    component: TwilioChat,
     exact: true
   }
 ];
